@@ -1,0 +1,128 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins:300);
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+body {
+  height: 100vh;
+  background: #ffffff;
+  overflow-y: hidden!important;
+  font-family: 'Poppins', sans-serif;
+}
+a {
+  text-decoration: none;
+  color: #ffa726; /* Narandžasta boja */
+  transition: 0.5s ease;
+}
+a:hover {
+  color: #fb8c00; /* Tamnija narandžasta */
+}
+.form {
+  background: #f7f8fa; /* Svetlo siva */
+  padding: 40px;
+  max-width: 600px;
+  margin: 120px auto;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px 4px rgba(0, 0, 0, .1);
+}
+.tab-group {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 40px 0;
+}
+.tab-group:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.tab-group li a {
+  display: block;
+  text-decoration: none;
+  padding: 15px;
+  background: rgba(66, 133, 244, .25); /* Svetlo plava */
+  color: #4285f4; /* Plava */
+  font-size: 20px;
+  float: left;
+  width: 48%;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.5s ease;
+}
+.tab-group li a:hover {
+  background: #4285f4; /* Plava */
+  color: #fff;
+}
+.tab-group .active a {
+  background: #4285f4; /* Plava */
+  color: #fff;
+}
+.tab-content > div:last-child {
+  display: none;
+}
+.tab-group {
+  border-radius: 15px!important;
+  margin: 20px;
+}
+h1 {
+  text-align: center;
+  color: #ffa726; /* Narandžasta */
+  font-weight: 300;
+  margin: 0 0 40px;
+}
+input, textarea {
+  font-size: 17px;
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 5px 10px;
+  background: #f0f2f5; /* Svetlo siva */
+  border: 1px solid #d1d3e2; /* Siva */
+  color: #333333;
+  border-radius: 6px;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+textarea {
+  border: 2px solid #d1d3e2; /* Siva */
+  resize: vertical;
+}
+.field-wrap {
+  position: relative;
+  margin-bottom: 40px;
+}
+.top-row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.top-row > div {
+  float: left;
+  width: 48%;
+  margin-right: 4%;
+}
+.top-row > div:last-child {
+  margin: 0;
+}
+.button {
+  border: 0;
+  outline: none;
+  border-radius: 15px;
+  padding: 15px 0;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  background: #ffa726; /* Narandžasta */
+  cursor: pointer;
+  color: #fff;
+  transition: all 0.5s ease;
+  -webkit-appearance: none;
+}
+.button:hover, .button:focus {
+  background: #fb8c00; /* Tamnija narandžasta */
+}
+.button-block {
+  display: block;
+  width: 100%;
+}
+.forgot {
+  margin-top: -20px;
+  text-align: right;
+}

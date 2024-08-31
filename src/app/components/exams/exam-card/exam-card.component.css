@@ -1,0 +1,38 @@
+.exam-card {
+  display: flex;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  background-color: #fff;
+  margin: 15px;
+  min-width: 250px;
+  max-width: 500px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.exam-card:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.exam-card:active {
+  background-color: #e8e8e8;
+}
+
+.card-body {
+  padding: 15px;
+  flex: 1;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.card-text {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 5px;
+}

@@ -1,0 +1,10 @@
+<h1>Welcome Back!</h1>
+<form (submit)="onSubmit()">
+  <div class="field-wrap">
+    <input type="email" required placeholder="Email" [(ngModel)]="email" name="email" />
+  </div>
+  <div class="field-wrap">
+    <input type="password" required placeholder="Password" [(ngModel)]="password" name="password" />
+  </div>
+  <button type="submit" class="button button-block">Login</button>
+</form>

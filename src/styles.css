@@ -1,0 +1,17 @@
+.body{
+  background-color: #f4f4f4;
+}
+.mockfon-button {
+  background-color: #2b7c7c; /* Narandžasta boja */
+  border: none;
+  color: #fff;
+  padding: 8px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+
+.mockfon-button:hover {
+  background-color: #025c61; /* Tamnija narandžasta boja */
+}

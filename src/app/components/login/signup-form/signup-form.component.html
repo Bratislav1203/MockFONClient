@@ -1,0 +1,18 @@
+<h1>Register</h1>
+<form (submit)="onSubmit()">
+  <div class="top-row">
+    <div class="field-wrap">
+      <input type="text" required placeholder="First Name" [(ngModel)]="firstName" name="firstName" />
+    </div>
+    <div class="field-wrap">
+      <input type="text" required placeholder="Last Name" [(ngModel)]="lastName" name="lastName" />
+    </div>
+  </div>
+  <div class="field-wrap">
+    <input type="email" required placeholder="Email Address" [(ngModel)]="email" name="email" />
+  </div>
+  <div class="field-wrap">
+    <input type="password" required placeholder="Password" [(ngModel)]="password" name="password" />
+  </div>
+  <button type="submit" class="button button-block">Sign Up</button>
+</form>

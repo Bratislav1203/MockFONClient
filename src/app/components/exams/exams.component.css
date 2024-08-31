@@ -1,0 +1,25 @@
+.exam-container {
+  padding: 20px;
+  background-color: #f4f4f4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container-title {
+  font-size: 1.75rem;
+  color: #333;
+  margin-bottom: 40px;
+}
+
+.exam-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.exam-list > div {
+  flex: 1 1 calc(33.333% - 30px);
+  max-width: calc(33.333% - 30px);
+}

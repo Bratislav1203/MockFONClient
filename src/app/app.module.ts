@@ -13,6 +13,7 @@ import { ExamCardComponent } from './components/exams/exam-card/exam-card.compon
 import { ExamDetailsComponent } from './components/exams/exam-details/exam-details.component';
 import { HeaderComponent} from './components/header/header.component';
 import { PaymentComponent } from './components/payment/payment.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { PaymentComponent } from './components/payment/payment.component';
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    CommonModule
+    CommonModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

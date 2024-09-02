@@ -1,18 +1,24 @@
-<h1>Register</h1>
-<form (submit)="onSubmit()">
+<h1>Registracija</h1>
+<form (ngSubmit)="onSubmit()" >
   <div class="top-row">
     <div class="field-wrap">
-      <input type="text" required placeholder="First Name" [(ngModel)]="firstName" name="firstName" />
+      <input type="text" required placeholder="Ime" [(ngModel)]="firstName" name="firstName" ngModel>
     </div>
     <div class="field-wrap">
-      <input type="text" required placeholder="Last Name" [(ngModel)]="lastName" name="lastName" />
+      <input type="text" required placeholder="Prezime" [(ngModel)]="lastName" name="lastName" ngModel>
     </div>
   </div>
   <div class="field-wrap">
-    <input type="email" required placeholder="Email Address" [(ngModel)]="email" name="email" />
+    <input type="email" required placeholder="Email" [(ngModel)]="email" name="email" ngModel>
   </div>
   <div class="field-wrap">
-    <input type="password" required placeholder="Password" [(ngModel)]="password" name="password" />
+    <input type="password" required placeholder="Lozinka" [(ngModel)]="password" name="password" ngModel>
   </div>
-  <button type="submit" class="button button-block">Sign Up</button>
+  <div class="field-wrap">
+    <input type="text" required placeholder="Adresa" [(ngModel)]="address" name="address" ngModel>
+  </div>
+  <div class="field-wrap">
+    <input type="text" required placeholder="JMBG" [(ngModel)]="umcn" name="umcn" ngModel>
+  </div>
+  <button type="submit" class="button button-block" >Registruj Se</button>
 </form>

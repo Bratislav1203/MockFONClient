@@ -2,8 +2,7 @@
   <div class="logo">
     <img [routerLink]="['/exams']" src="assets/logo.jpg" alt="Logo">
   </div>
-  <div class="header-right">
-    <p class="welcome-message">Welcome, User!</p>
-    <button class="mockfon-button">Logout</button>
+  <div class="header-right" *ngIf="isLoggedIn">
+    <button (click)="logout()" [routerLink]="['/auth']" class="mockfon-button">Odjavi se</button>
   </div>
 </header>

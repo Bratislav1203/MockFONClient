@@ -35,7 +35,6 @@
   display: flex;
   justify-content: center; /* Centriranje dugmeta u kontejneru */
   margin-top: 20px;
-  gap: 15px;
 }
 
 .delete-button {
@@ -61,6 +60,26 @@
 
 .exam-list > div.selected {
   background-color: rgba(66, 133, 244, 0.1); /* Blago zatamnjenje pozadine */
-  box-shadow: 0 4px 12px rgba(66, 133, 244, 0.3); /* Blaga senka na selektovanom ispitu */
+  box-shadow: 0 6px 14px rgba(66, 133, 244, 0.2); /* Ravnomerna senka na selektovanom ispitu */
   transform: translateY(-5px);
 }
+
+.no-exams-message {
+  display: flex;
+  justify-content: center; /* Centriranje horizonalno */
+  align-items: center; /* Centriranje vertikalno */
+  margin: 50px auto; /* Automatsko centriranje u odnosu na roditeljski element */
+  width: 50%; /* Podesite širinu po potrebi, npr. 50% ili konkretna vrednost */
+  max-width: 600px; /* Maksimalna širina pravougaonika */
+  min-height: 150px; /* Visina pravougaonika */
+  font-size: 1.2rem;
+  color: #555;
+  text-align: center;
+  background-color: #fff8e1;
+  padding: 20px;
+  border: 1px solid #ffd54f;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative; /* Za dodatno pozicioniranje unutar kontejnera */
+}
+

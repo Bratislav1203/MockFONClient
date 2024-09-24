@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../../services/auth.service';
 import { Router } from '@angular/router';
+import { SweetalertService } from '../../../services/sweetalert.service'; // Importuj SweetAlert servis
 
 @Component({
   selector: 'app-login-form',
@@ -12,28 +13,34 @@ export class LoginFormComponent implements OnInit {
   email = '';
   password = '';
 
-
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(
+    private authService: AuthService,
+    private router: Router,
+    private sweetalertService: SweetalertService // Dodaj SweetAlert servis
+  ) {}
 
   ngOnInit(): void {
   }
 
   onSubmit(): void {
+    // Provera da li su polja popunjena
     if (!this.email || !this.password) {
-      alert('Both email and password are required!');
+      this.sweetalertService.showError('Potrebni su i email i lozinka!', 'Greška');
       return;
     }
-    this.authService.login(this.email, this.password).subscribe(
-      success => {
+
+    // Poziv metode za prijavu
+    this.authService.login(this.email, this.password).subscribe({
+      next: (success) => {
         this.router.navigate(['/exams']);
-        alert('Uspesna prijava!');
+        this.sweetalertService.showSuccess('Uspešna prijava!', 'Dobrodošli');
       },
-      error => {
-        const errorMessage = error.error || 'Neuspesna prijava! Provjerite vaše kredencijale i pokušajte ponovo.';
+      error: (error) => {
+        console.log(error);
+        const errorMessage = error.error || 'Neuspešna prijava! Proverite vaše kredencijale i pokušajte ponovo.';
         console.log(errorMessage);
-        alert(errorMessage);
-      });
+        this.sweetalertService.showError(errorMessage, 'Greška');
+      }
+    });
   }
-
-
 }

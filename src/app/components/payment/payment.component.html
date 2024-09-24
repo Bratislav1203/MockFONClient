@@ -1,18 +1,13 @@
-<div *ngIf="!paidFor">
+<div class="content-wrapper">
+  <div class="content">
+    <div *ngIf="!paidFor">
+      <h1> Ukupan iznos za placanje - {{ this.price | currency :'USD' }}</h1>
+    </div>
 
-  <h1>Buy this Couch - ${{ product.price }} OBO</h1>
+    <div *ngIf="paidFor">
+      <h1>Uspesno ste se prijavili !</h1>
+    </div>
 
-  <p>{{ product.description }}</p>
-
-  <img width="400" [src]="product.img">
-
+    <div [hidden]="paidFor" #paypal></div>
+  </div>
 </div>
-
-<div *ngIf=paidFor>
-  <h1>Yay, you bought a sweet couch!</h1>
-
-  <img src="assets/giphy.gif">
-</div>
-
-
-<div [hidden]="paidFor" #paypal></div>

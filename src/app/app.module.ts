@@ -14,6 +14,11 @@ import { ExamDetailsComponent } from './components/exams/exam-details/exam-detai
 import { HeaderComponent} from './components/header/header.component';
 import { PaymentComponent } from './components/payment/payment.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AddExamComponent } from './components/exams/add-exam/add-exam.component';
+import { PaymentSlipComponent } from './components/payment-slip/payment-slip.component';
+import { VerificationComponent } from './components/verification/verification.component';
+import { RegisteredExamsComponent } from './components/registered-exams/registered-exams.component';
+import { UserDetailsComponent } from './components/user-details/user-details.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +30,12 @@ import { HttpClientModule } from '@angular/common/http';
     ExamCardComponent,
     ExamDetailsComponent,
     HeaderComponent,
-    PaymentComponent
+    PaymentComponent,
+    AddExamComponent,
+    PaymentSlipComponent,
+    VerificationComponent,
+    RegisteredExamsComponent,
+    UserDetailsComponent
   ],
   imports: [
     BrowserModule,

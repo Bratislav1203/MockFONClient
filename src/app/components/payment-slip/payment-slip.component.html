@@ -1,0 +1,56 @@
+<div id="uplatnica">
+  <div id="levo">
+    <div id="uplatnicanaslov">уплатилац</div>
+    <div id="uplatilac">
+      <span style="font-size: 16px; margin: 10px">{{ payer }}</span>
+    </div>
+    <div id="svrhauplatenaslov">сврха уплате</div>
+    <div id="svrhauplate">
+      <span style="margin: 10px; font-size: 16px">{{ purposeOfPayment }}</span>
+    </div>
+    <div id="primalacnaslov">прималац</div>
+    <div id="primalac">
+      <span style="margin: 10px; font-size: 16px; margin-left: 0px">{{ recipient }}</span>
+    </div>
+  </div>
+
+  <div id="desno">
+    <div id="naslov">налог за уплату</div>
+    <div id="desnakolona">
+      <div id="kolonaiznos">
+        <div id="kolonaiznosnaslov">
+          <div id="sifraplacanjanaslov">шифра плаћања</div>
+          <div id="valutanaslov">валута</div>
+          <div id="iznosnaslov">износ</div>
+        </div>
+        <div id="kolonaiznosunos">
+          <div id="sifraplacanjaunos">{{ paymentCode }}</div>
+          <div id="valutaunos">RSD</div>
+          <div id="iznosunos">{{ amount }}</div>
+        </div>
+      </div>
+
+      <div id="racunprimaoca">
+        <div id="racunprimaocanaslov">рачун примаоца</div>
+        <div id="racunprimaocaunos">{{ recipientAccount }}</div>
+      </div>
+
+      <div id="modelipozivnabr">
+        <div id="modelipozivbrnaslov">модел и позив на број (одобрење)</div>
+        <div id="modelipozivunos">
+          <div id="modelunos">{{ model }}</div>
+          <div id="pozivbrunos">{{ referenceNumber }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="footer">
+    <div id="pecatpotpis">печат и потпис уплатиоца</div>
+    <div id="mestounos">Beograd</div>
+    <div id="mestodatum">место и датум пријема</div>
+    <div id="datumvalute">датум валуте</div>
+  </div>
+</div>
+
+<button class="mockfon-button align-content-center" (click)="downloadPDF()">Preuzmi PDF</button>

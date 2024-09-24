@@ -1,6 +1,10 @@
 <header class="header">
   <div class="logo">
-    <img [routerLink]="['/exams']" src="assets/logo.jpg" alt="Logo">
+    <img [routerLink]="['/exams']" src="assets/mockfonlogo.png" alt="Logo">
+    <!-- Link za admin korisnike, pored loga -->
+    <a [routerLink]="['/exams']" class="mockfon-menu-link">Predstojeći ispiti</a>
+    <a *ngIf="isAdmin" [routerLink]="['/add-exam']" class="mockfon-menu-link">Novi ispit</a>
+    <a *ngIf="!isAdmin && isLoggedIn" [routerLink]="['/myExams']" class="mockfon-menu-link">Prijavljeni ispiti</a>
   </div>
   <div class="header-right" *ngIf="isLoggedIn">
     <button (click)="logout()" [routerLink]="['/auth']" class="mockfon-button">Odjavi se</button>

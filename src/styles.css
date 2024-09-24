@@ -2,16 +2,22 @@
   background-color: #f4f4f4;
 }
 .mockfon-button {
-  background-color: #2b7c7c; /* Narandžasta boja */
+  background-color: #2b7c7c; /* Originalna boja */
   border: none;
   color: #fff;
   padding: 8px 15px;
   border-radius: 6px;
   cursor: pointer;
   font-size: 0.9rem;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s, transform 0.2s;
 }
 
 .mockfon-button:hover {
-  background-color: #025c61; /* Tamnija narandžasta boja */
+  background-color: #025c61; /* Tamnija nijansa za hover efekat */
+  transform: translateY(-3px); /* Efekat podizanja pri hoveru */
+}
+
+.mockfon-button:active {
+  background-color: #014a4d; /* Još tamnija nijansa za active stanje */
+  transform: translateY(-1px); /* Blagi povratak zbog klika */
 }

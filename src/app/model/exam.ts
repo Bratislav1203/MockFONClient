@@ -1,11 +1,11 @@
 export class Exam {
   constructor(
     public id: number,
-    public name: string,
+    public subject: string,
     public date: string,
     public time: string,
     public price: number,
-    public registrationStart?: string,
-    public registrationEnd?: string
+    public registrationStart: string,
+    public registrationEnd: string
   ) {}
 }

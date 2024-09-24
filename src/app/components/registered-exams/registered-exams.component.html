@@ -1,0 +1,20 @@
+<div class="exam-container">
+  <h2 class="container-title">Prijavljeni Ispiti</h2>
+
+  <div *ngIf="exams && exams.length > 0; else noExams">
+    <div class="exam-list">
+      <div *ngFor="let exam of exams; let i = index"
+           [class.selected]="isSelected(exam)"
+           (click)="toggleSelection(exam)">
+        <app-exam-card [exam]="exam"></app-exam-card>
+      </div>
+    </div>
+    <div class="button-container">
+      <button class="delete-button" (click)="deleteRegistration()">Obrisi rezervaciju</button>
+    </div>
+  </div>
+
+  <ng-template #noExams>
+    <p class="no-exams-message">Trenutno nemate prijavljenih ispita.</p>
+  </ng-template>
+</div>

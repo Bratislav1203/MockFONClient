@@ -1,0 +1,35 @@
+<!-- add-exam.component.html -->
+<div class="container">
+  <h2>Dodajte novi ispit</h2>
+  <form (submit)="onSubmit()" #examForm="ngForm">
+    <div class="field-wrap">
+      <label>Predmet ispita:</label>
+      <select [(ngModel)]="exam.subject" name="subject" required>
+        <option value="Matematika">Matematika</option>
+        <option value="OpstaZnanja">Opšta informisanost</option>
+      </select>
+    </div>
+    <div class="field-wrap">
+      <label>Datum ispita:</label>
+      <input type="date" [(ngModel)]="exam.date" name="date" required />
+    </div>
+    <div class="field-wrap">
+      <label>Vreme ispita:</label>
+      <input type="time" [(ngModel)]="exam.time" name="time" required />
+    </div>
+    <div class="field-wrap">
+      <label>Početak prijave:</label>
+      <input type="date" [(ngModel)]="exam.registrationStart" name="registrationStart" required />
+    </div>
+    <div class="field-wrap">
+      <label>Kraj prijave:</label>
+      <input type="date" [(ngModel)]="exam.registrationEnd" name="registrationEnd" required />
+    </div>
+    <div class="field-wrap">
+      <label>Cena ispita:</label>
+      <input type="number" [(ngModel)]="exam.price" name="price" required min="0" />
+    </div>
+
+    <button type="submit" class="button button-block"  >Dodaj ispit</button>
+  </form>
+</div>

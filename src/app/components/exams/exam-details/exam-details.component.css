@@ -1,33 +1,103 @@
-/* exam-details.component.css */
 .exam-details {
-  margin-top: 40px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   padding: 20px;
+  background-color: #fff; /* Promenjeno u belo */
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+  max-width: 800px;
 }
 
 .exam-title {
-  font-size: 2rem;
+  font-size: 24px;
+  font-weight: bold;
   color: #333;
   margin-bottom: 20px;
-}
-
-.exam-info {
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  max-width: 600px;
-  width: 100%;
-  margin-bottom: 20px;
+  text-align: center;
 }
 
 .exam-info p {
-  font-size: 1.2rem;
+  margin: 8px 0;
+  font-size: 16px;
   color: #555;
-  margin: 10px 0;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 15px;
+}
+
+.delete-button {
+  background-color: #d54b4b;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.delete-button:hover {
+  background-color: #b84343; /* Tamnija nijansa za hover efekat */
+  transform: translateY(-3px);
+}
+
+.delete-button:active {
+  background-color: #a33c3c; /* Još tamnija nijansa za active stanje */
+  transform: translateY(-1px); /* Blagi povratak zbog klika */
+}
+
+.search-input {
+  background-color: #fcfcfc;
+  width: 100%;
+  padding: 10px;
+  margin: 20px 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.user-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.user-item {
+  display: flex;
+  flex-direction: column; /* Promenjeno da bude u skladu sa stilom korisničke kartice */
+  padding: 10px 15px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.user-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.mockfon-button {
+  background-color: #409cec;
+  border: none;
+  color: #fff;
+  padding: 8px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.mockfon-button:hover {
+  background-color: #367bb5; /* Tamnija nijansa za hover efekat */
+  transform: translateY(-3px);
+}
+
+.mockfon-button:active {
+  background-color: #2c6391; /* Još tamnija nijansa za active stanje */
+  transform: translateY(-1px); /* Blagi povratak zbog klika */
 }
 

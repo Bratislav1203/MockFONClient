@@ -1,7 +1,10 @@
-<div class="exam-card" [routerLink]="['/exams', exam.id]">
+<div class="exam-card">
   <div class="card-body">
-    <h5 class="card-title">{{ exam.name }}</h5>
-    <p class="card-text">Datum: {{ exam.date }}</p>
-    <p class="card-text">Vreme: {{ exam.time }}</p>
+    <h5 class="card-title">{{ exam.subject }}</h5>
+    <p><strong>Datum:</strong> {{ exam.date }}</p>
+    <p><strong>Vreme:</strong> {{ exam.time }}</p>
+    <p><strong>Registracija kreće:</strong> {{ exam.registrationStart }}</p>
+    <p><strong>Registracija se završava:</strong> {{ exam.registrationEnd }}</p>
+    <p><strong>Cena:</strong> {{ exam.price | currency:'RSD' }}</p>
   </div>
 </div>

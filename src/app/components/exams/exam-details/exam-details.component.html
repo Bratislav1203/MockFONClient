@@ -1,11 +1,27 @@
 <div class="exam-details">
-  <h1 class="exam-title">{{ exam.name }}</h1>
+  <h1 class="exam-title">{{ exam.subject }}</h1>
   <div class="exam-info">
     <p><strong>Datum:</strong> {{ exam.date }}</p>
     <p><strong>Vreme:</strong> {{ exam.time }}</p>
-    <p><strong>Registracija krece:</strong> {{ exam.registrationStart }}</p>
-    <p><strong>Registracija se zavrsava:</strong> {{ exam.registrationEnd }}</p>
+    <p><strong>Registracija kreće:</strong> {{ exam.registrationStart }}</p>
+    <p><strong>Registracija se završava:</strong> {{ exam.registrationEnd }}</p>
     <p><strong>Cena:</strong> {{ exam.price | currency:'RSD' }}</p>
   </div>
-  <button class="mockfon-button" (click)="proceedToPayment()">Predji na placanje</button>
+
+  <div class="button-container">
+    <button class="delete-button" *ngIf="isAdmin" (click)="deleteExam()">Obriši ispit</button>
+    <button class="mockfon-button" (click)="downloadUserList()">Preuzmite listu prijavljenih korisnika</button>
+  </div>
+
+  <!-- Polje za pretragu korisnika -->
+  <input type="text" [(ngModel)]="searchTerm" placeholder="Pretraži korisnike po emailu" class="search-input" />
+
+  <!-- Lista korisnika sa svim informacijama i opcijom za odjavu -->
+  <ul class="user-list">
+    <app-user-details
+      *ngFor="let user of filteredUsers()"
+      [user]="user"
+      (unregister)="unregisterUser($event)"
+    ></app-user-details>
+  </ul>
 </div>

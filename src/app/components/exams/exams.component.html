@@ -1,8 +1,13 @@
 <div class="exam-container">
-  <h2 class="container-title">Predstojeci Ispiti</h2>
+  <h2 class="container-title">Predstojeći ispiti</h2>
   <div class="exam-list">
-    <div *ngFor="let exam of exams; let i = index" >
+    <div *ngFor="let exam of exams; let i = index"
+         [class.selected]="isSelected(exam)"
+         (click)="toggleSelection(exam)">
       <app-exam-card [exam]="exam"></app-exam-card>
     </div>
   </div>
-</div>
+  <div class="button-container">
+    <button class="mockfon-button" *ngIf="!isAdmin" (click)="payWithPaypal()">Plati preko PayPala</button>
+    <button class="mockfon-button" *ngIf="!isAdmin" (click)="generatePaymentSlip()">Generiši uplatnicu</button>
+  </div></div>

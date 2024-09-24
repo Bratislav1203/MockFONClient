@@ -1,0 +1,17 @@
+<div class="form">
+  <div class="form-content">
+    <h1>Verifikacija</h1>
+    <form (ngSubmit)="onSubmit()" >
+      <div class="field-wrap">
+        <input type="password" required placeholder="Lozinka" [(ngModel)]="password" name="password" ngModel>
+      </div>
+      <div class="field-wrap">
+        <input type="text" required placeholder="Adresa" [(ngModel)]="address" name="address" ngModel>
+      </div>
+      <div class="field-wrap">
+        <input type="text" required placeholder="JMBG" [(ngModel)]="umcn" name="umcn" ngModel>
+      </div>
+      <button type="submit" class="button button-block" >Verifikuj nalog</button>
+    </form>
+  </div>
+</div>

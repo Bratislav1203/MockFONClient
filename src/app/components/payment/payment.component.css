@@ -1,0 +1,17 @@
+.content-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw; /* Koristi celu širinu viewport-a */
+  text-align: center;
+  margin-top: 120px;
+}
+
+.content {
+  /* Dodatni stilovi za sadržaj mogu biti ovde */
+}
+
+.content img {
+  display: block;
+  margin: auto;
+}

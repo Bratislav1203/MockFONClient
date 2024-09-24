@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../../services/auth.service';
 import { Router } from '@angular/router';
+import { SweetalertService } from '../../../services/sweetalert.service'; // Importuj SweetAlert servis
 
 @Component({
   selector: 'app-signup-form',
@@ -9,44 +10,38 @@ import { Router } from '@angular/router';
 })
 export class SignupFormComponent implements OnInit {
 
-  firstName: string = '';
-  lastName: string = '';
-  email: string = '';
-  password: string = '';
-  address: string = '';
-  umcn: string = '';
+  firstName = '';
+  lastName = '';
+  email = '';
 
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(
+    private authService: AuthService,
+    private router: Router,
+    private sweetalertService: SweetalertService // Dodaj SweetAlert servis
+  ) {}
 
   ngOnInit(): void {
   }
 
-  onSubmit() {
-    if (!this.firstName || !this.lastName || !this.email || !this.password || !this.address || !this.umcn) {
-      alert('Moras da popunis sva polja!');
-      return;
-    }
-    if (!this.isValidJMBG(this.umcn)) {
-      alert('JMBG nije validan. Mora biti broj od 13 cifara.');
+  onSubmit(): void {
+    if (!this.firstName || !this.lastName || !this.email) {
+      this.sweetalertService.showError('Morate popuniti sva polja!', 'Greška');
       return;
     }
 
-    this.authService.signup(this.firstName, this.lastName, this.email, this.password, this.address, this.umcn).subscribe({
-      next: (message) => {  // Ovde se očekuje da je 'message' tipa string
-        console.log(message); // Možete i ovde logovati poruku ako želite
-        alert('Uspesna registracija. Molimo vas proverite vaš email i izvršite validaciju naloga klikom na link koji smo poslali kako biste potvrdili svoj nalog.');
+    this.authService.signup(this.firstName, this.lastName, this.email).subscribe({
+      next: (message) => {
+        console.log(message);
+        this.sweetalertService.showSuccess('Uspešna registracija! Molimo vas proverite vaš email i izvršite validaciju naloga klikom na link koji smo poslali.', 'Registracija uspešna');
       },
       error: (error) => {
         console.error('Registration error:', error);
-        alert('Neuspesna registracija!');
+        if (error.status === 409) {
+          this.sweetalertService.showError(error.error, 'Greška');
+        } else {
+          this.sweetalertService.showError('Neuspešna registracija!', 'Greška');
+        }
       }
     });
-  }
-
-
-
-  private isValidJMBG(umcn: string): boolean {
-    const umcnPattern = /^\d{13}$/;
-    return umcnPattern.test(umcn);
   }
 }

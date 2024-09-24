@@ -90,5 +90,9 @@ export class RegisteredExamsComponent implements OnInit, OnDestroy {
         }
       });
     }
+    else{
+        this.sweetalertService.showError('Morate odabrati ispit', 'Greška'); // Zamena alert-a sa stilizovanim notifikacijama
+        return;
+    }
   }
 }
